@@ -1,4 +1,4 @@
-# samples/python/src/roles/shopping_agent/agent.py
+# src/roles/shopping_agent/agent.py
 
 """A shopping agent.
 
