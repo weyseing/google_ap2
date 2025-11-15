@@ -82,35 +82,6 @@ wheels = [
 ]
 
 [[package]]
-name = "ap2"
-version = "0.1"
-source = { editable = "." }
-dependencies = [
-    { name = "a2a-sdk" },
-    { name = "absl-py" },
-    { name = "flask" },
-    { name = "flask-cors" },
-    { name = "google-adk" },
-    { name = "google-genai" },
-    { name = "httpx" },
-    { name = "pydantic" },
-    { name = "requests" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "a2a-sdk" },
-    { name = "absl-py" },
-    { name = "flask" },
-    { name = "flask-cors" },
-    { name = "google-adk" },
-    { name = "google-genai" },
-    { name = "httpx" },
-    { name = "pydantic" },
-    { name = "requests" },
-]
-
-[[package]]
 name = "attrs"
 version = "25.4.0"
 source = { registry = "https://pypi.org/simple" }
@@ -535,6 +506,35 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/9f/7d/b331e2b31e32ca81f73111e9a79d1c6222d91f7b647013c77604a7f41322/google_adk-1.18.0.tar.gz", hash = "sha256:883fc621ce138099a75b2677017a1cd510e4303bad1415eabf38f802078d57b9", size = 1950454, upload-time = "2025-11-05T18:43:25.578Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/65/30/1012b25cb0dfb630c2b8c040c181f0b6559efb00d1e6007c4eca24970fb2/google_adk-1.18.0-py3-none-any.whl", hash = "sha256:657fe281718ce87117149f006556f9fd84a0bdbe1073dd6b8c3d4bd3e6044b45", size = 2244321, upload-time = "2025-11-05T18:43:23.987Z" },
+]
+
+[[package]]
+name = "google-ap2"
+version = "0.1"
+source = { editable = "." }
+dependencies = [
+    { name = "a2a-sdk" },
+    { name = "absl-py" },
+    { name = "flask" },
+    { name = "flask-cors" },
+    { name = "google-adk" },
+    { name = "google-genai" },
+    { name = "httpx" },
+    { name = "pydantic" },
+    { name = "requests" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "a2a-sdk" },
+    { name = "absl-py" },
+    { name = "flask" },
+    { name = "flask-cors" },
+    { name = "google-adk" },
+    { name = "google-genai" },
+    { name = "httpx" },
+    { name = "pydantic" },
+    { name = "requests" },
 ]
 
 [[package]]
