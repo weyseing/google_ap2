@@ -21,7 +21,6 @@ shopping and purchasing process.
 from datetime import datetime
 from datetime import timedelta
 from datetime import timezone
-
 from a2a.types import Artifact
 from google.adk.tools.tool_context import ToolContext
 
@@ -32,7 +31,7 @@ from ap2.types.mandate import IntentMandate
 from common.a2a_message_builder import A2aMessageBuilder
 from common.artifact_utils import find_canonical_objects
 from roles.shopping_agent.remote_agents import merchant_agent_client
-
+from inc import func_utilities
 
 def create_intent_mandate(
     natural_language_description: str,
