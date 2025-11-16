@@ -10,7 +10,7 @@ resolution-markers = [
 
 [[package]]
 name = "a2a-sdk"
-version = "0.3.12"
+version = "0.3.4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "google-api-core" },
@@ -19,9 +19,9 @@ dependencies = [
     { name = "protobuf" },
     { name = "pydantic" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/55/38/b473e04e21960d8eee7b04e35ac35c8e117f3cc2b333e0fa0371b48308a3/a2a_sdk-0.3.12.tar.gz", hash = "sha256:498a14c6b175185d24b4d800ea1ce1daa7dade48cdb85bc63c6db18acca37f6d", size = 227806, upload-time = "2025-11-12T21:38:23.972Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/cd/ce/f50c904664a0fcafa0909be7a987ef6dcf1d75595532305bcefadb0532af/a2a_sdk-0.3.4.tar.gz", hash = "sha256:79db4c287cab1235a0b0c5af9a3a58eedd8a037b51a87bed2e89f5e5e8977f65", size = 220158, upload-time = "2025-09-02T16:53:48.962Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/77/68/3c89949d8692deaab48ac077543fdff500317ee06ee16c7292ddff66a54f/a2a_sdk-0.3.12-py3-none-any.whl", hash = "sha256:8f1cb56e1faa3edc6a228075391b136c1518061b4f0b78ff0e373f65f858d736", size = 140393, upload-time = "2025-11-12T21:38:22.63Z" },
+    { url = "https://files.pythonhosted.org/packages/44/7a/c7a13e692aba332fb55480c843acb7f3cf43668623f75d127792e8fa9b30/a2a_sdk-0.3.4-py3-none-any.whl", hash = "sha256:423f72334b4a4b34cb4da07d5db3b786975de2fbc527236e3ca713b0d08c27e1", size = 135297, upload-time = "2025-09-02T16:53:46.473Z" },
 ]
 
 [[package]]
@@ -539,7 +539,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "a2a-sdk" },
+    { name = "a2a-sdk", specifier = "==0.3.4" },
     { name = "absl-py" },
     { name = "colorlog", specifier = ">=6.10.1" },
     { name = "flask" },

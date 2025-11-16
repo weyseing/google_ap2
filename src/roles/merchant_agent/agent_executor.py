@@ -1,4 +1,4 @@
-# samples/python/src/roles/merchant_agent/agent_executor.py
+# /app/src/roles/merchant_agent/agent_executor.py
 
 """A merchant agent executor for handling user shopping requests.
 
