@@ -54,6 +54,15 @@ class RetryingLlmAgent(LlmAgent):
             error_message="Gemini server error. Retrying...",
             custom_metadata={"error": str(e)},
         )
+        event =  Event(
+            author=ctx.agent.name,
+            invocation_id=ctx.invocation_id,
+            error_message="Gemini server error. Retrying...",
+            custom_metadata={"error": str(e)},
+        )
+        print("\n\n\n--- TEST ---")
+        print(event.__dict__)
+        print("--- TEST ---\n\n\n")
         async for event in self._retry_async(ctx, retries_left - 1):
           yield event
 
