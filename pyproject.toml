@@ -18,6 +18,7 @@ dependencies = [
   "google-genai",
   "httpx",
   "requests",
+  "colorlog>=6.10.1",
 ]
 requires-python = ">=3.10"
 

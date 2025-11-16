@@ -22,7 +22,9 @@ from google.adk.agents.invocation_context import InvocationContext
 from google.adk.agents.llm_agent import LlmAgent
 from google.adk.events.event import Event
 from typing_extensions import AsyncGenerator, override
+import traceback
 
+from inc import func_utilities
 
 class RetryingLlmAgent(LlmAgent):
   """An LLM agent that surfaces errors to the user and then retries."""
@@ -35,7 +37,7 @@ class RetryingLlmAgent(LlmAgent):
       self, ctx: InvocationContext, retries_left: int = 0
   ) -> AsyncGenerator[Event, None]:
     if retries_left <= 0:
-      yield Event(
+      event = Event(
           author=ctx.agent.name,
           invocation_id=ctx.invocation_id,
           error_message=(
@@ -43,26 +45,25 @@ class RetryingLlmAgent(LlmAgent):
               " respond. Please try again later."
           ),
       )
+      yield event
+      func_utilities.log_error(event.__dict__)
     else:
       try:
         async for event in super()._run_async_impl(ctx):
           yield event
-      except Exception as e:  # pylint: disable=broad-exception-caught
-        yield Event(
-            author=ctx.agent.name,
-            invocation_id=ctx.invocation_id,
-            error_message="Gemini server error. Retrying...",
-            custom_metadata={"error": str(e)},
-        )
+      except Exception as e:  
+        error_trace = traceback.format_exc()
         event =  Event(
             author=ctx.agent.name,
             invocation_id=ctx.invocation_id,
             error_message="Gemini server error. Retrying...",
-            custom_metadata={"error": str(e)},
+            custom_metadata={
+                "error": str(e),
+                "traceback": error_trace
+            },
         )
-        print("\n\n\n--- TEST ---")
-        print(event.__dict__)
-        print("--- TEST ---\n\n\n")
+        yield event
+        func_utilities.log_error(event.__dict__)
         async for event in self._retry_async(ctx, retries_left - 1):
           yield event
 
