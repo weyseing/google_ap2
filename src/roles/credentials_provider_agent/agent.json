@@ -57,6 +57,6 @@
   ],
   "defaultInputModes": ["text/plain"],
   "defaultOutputModes": ["application/json"],
-  "url": "http://localhost:8002/a2a/credentials_provider",
+  "url": "http://localhost:7002/a2a/credentials_provider",
   "version": "1.0.0"
 }

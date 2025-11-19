@@ -32,6 +32,7 @@ from ap2.types.mandate import PaymentMandate
 from ap2.types.payment_request import PAYMENT_METHOD_DATA_DATA_KEY
 from ap2.types.payment_request import PaymentMethodData
 from common import message_utils
+from inc import func_utilities
 
 
 async def handle_get_shipping_address(
