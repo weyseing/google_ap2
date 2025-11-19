@@ -55,7 +55,7 @@ async def find_items_workflow(
         """ % DEBUG_MODE_INSTRUCTIONS
 
   llm_response = llm_client.models.generate_content(
-      model="gemini-2.0-flash",
+      model="gemini-2.5-flash-lite",
       contents=prompt,
       config={
           "response_mime_type": "application/json",
@@ -123,6 +123,7 @@ async def _create_and_add_cart_mandate_artifact(
   cart_mandate = CartMandate(contents=cart_contents)
 
   storage.set_cart_mandate(cart_mandate.contents.id, cart_mandate)
+  
   await updater.add_artifact([
       Part(
           root=DataPart(data={CART_MANDATE_DATA_KEY: cart_mandate.model_dump()})
