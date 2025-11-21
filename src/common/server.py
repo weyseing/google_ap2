@@ -84,7 +84,7 @@ def run_agent_blocking(
   # Start the server.
   logger.info("%s listening on http://localhost:%d", agent_card.name, port)
   uvicorn.run(
-      app, host="127.0.0.1", port=port, log_level="info", timeout_keep_alive=120
+      app, host="0.0.0.0", port=port, log_level="info", timeout_keep_alive=120
   )
 
 
